@@ -68,8 +68,16 @@ const pokemonOmar = {
 // pokemonDonnie.attackOpponent(pokemonOmar);
 console.log(pokemonDonnie.display());
 console.log(pokemonOmar.display());
+
+let omarPokemonImage;
+let donniePokemonImage;
+function preload() {
+	omarPokemonImage = loadImage('assets/omar-pokemon.png');
+	donniePokemonImage = loadImage('assets/donnie-pokemon.png');
+}
 function setup() {
 	createCanvas(600, 600);
+
 }
 
 function draw() {
@@ -92,6 +100,16 @@ function draw() {
 	attackBox('Drip', 50, 525);
 	attackBox('Water Whip', 325, 525);
 	// console.log(mouseY);
+	fill('rgba(30, 30, 30, 0.5)');
+	// Omar's / Attacker's Platform
+	ellipse(150, 300, 200, 70);
+
+	// Donnie's / Defender's Platform
+	ellipse(450, 150, 200, 70);
+
+	image(omarPokemonImage, 85, 150, 125, 175);
+	image(donniePokemonImage, 390, 20, 125, 175);
+
 }
 
 function mousePressed() {
