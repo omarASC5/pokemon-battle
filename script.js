@@ -89,11 +89,23 @@ function draw() {
 
 	// Attacks
 	// Water Throw Attack:
-	// fill(100, 150, 100);
-	// rect(50, 475, 200, 50);
-	// fill(0);
-	// textSize(32);
-	// text('Water Throw', 60, 485, 200, 50);
+	fill(0, 128, 255);
+	rect(50, 50, 200, 100);
+	fill(0);
+	textSize(16);
+	text(`Pokemon Name: ${pokemonOmar.name}`, 50, 40, 200, 50);
+	text(`Health: ${pokemonOmar.health}`, 50, 60, 200, 50);
+	text(`Defense: ${pokemonOmar.health}`, 50, 80, 200, 50);
+	text(`Type: ${pokemonOmar.type}`, 50, 100, 200, 50);
+
+	fill(255, 77, 77);
+	rect(350, 200, 200, 100);
+	fill(0);
+	textSize(16);
+	text(`Pokemon Name: ${pokemonDonnie.name}`, 350, 190, 200, 50);
+	text(`Health: ${pokemonDonnie.health}`, 350, 210, 200, 50);
+	text(`Defense: ${pokemonDonnie.health}`, 350, 230, 200, 50);
+	text(`Type: ${pokemonDonnie.type}`, 350, 250, 200, 50);
 
 	attackBox('Water Throw', 50, 425);
 	attackBox('Splash', 325, 425);
