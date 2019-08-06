@@ -4,11 +4,11 @@ const pokemonOmar = {
 	defense: 150,
 	health: 150,
 	type: 'WATER',
-	waterThrowAttack: 250,
-	splashAttack: 110,
+	waterThrowAttack: 16,
+	splashAttack: 18,
 	dripAttack: 12,
-	waterWhipAttack: 60,
-	startingHealth: 150,
+	waterWhipAttack: 9,
+	startingHealth: 8,
 
 	takeDamage: function (damage) {
 		this.health -= damage;
@@ -88,15 +88,27 @@ function draw() {
 	rect(0, 400, 600, 200);
 
 	// Attacks
-	// Water Throw Attack:
-	fill(0, 128, 255);
-	rect(50, 50, 200, 100);
-	fill(0);
-	textSize(16);
-	text(`Pokemon Name: ${pokemonOmar.name}`, 50, 40, 200, 50);
-	text(`Health: ${pokemonOmar.health}`, 50, 60, 200, 50);
-	text(`Defense: ${pokemonOmar.health}`, 50, 80, 200, 50);
-	text(`Type: ${pokemonOmar.type}`, 50, 100, 200, 50);
+	// Pokemon Description Box:
+	const box = {
+		x: 50,
+		y: 50,
+		
+	}
+	function pokemonDescriptionBox(x, y, width, height, fontSize, boxColor) {
+		fill(boxColor);
+		rect(x, y, width, height);
+		fill(0);
+		textSize(fontSize);
+		text(`Pokemon Name: ${pokemonOmar.name}`, x, y - 10, width, height / 2);
+		text(`Health: ${pokemonOmar.health}`, x, y + 10, width, height / 2);
+		text(`Defense: ${pokemonOmar.defense}`, x, y + 30, width, height / 2);
+		text(`Type: ${pokemonOmar.type}`, x, y + 50, width, height / 2);
+		
+	}
+	function pokemonText(name, health, defense, type) {
+
+	}
+	pokemonDescriptionBox(50, 50, 200, 100, 16, '#0080ff');
 
 	fill(255, 77, 77);
 	rect(350, 200, 200, 100);
@@ -121,7 +133,8 @@ function draw() {
 
 	image(omarPokemonImage, 85, 150, 125, 175);
 	image(donniePokemonImage, 390, 20, 125, 175);
-
+	// fill(100, 50, 210);
+	// 	ellipse(130, 185, 50, 50);
 }
 
 function mousePressed() {
@@ -158,3 +171,4 @@ function attackBox(attackName, x, y) {
 	textSize(32);
 	text(attackName, x, y, 200, 50);
 }
+
